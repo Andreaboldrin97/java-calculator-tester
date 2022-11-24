@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.calculator.CalculatorTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in org.calculator.CalculatorTest
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.038 s <<< FAILURE! - in org.calculator.CalculatorTest
+illegalDivisionTest  Time elapsed: 0.013 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
+	at org.calculator.CalculatorTest.illegalDivisionTest(CalculatorTest.java:76)
+

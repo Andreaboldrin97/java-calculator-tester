@@ -2,6 +2,7 @@ package org.calculator;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -23,6 +24,7 @@ public class CalculatorTest {
 		assertEquals(result,10);
 		
 	}
+	
 	@Test
 	@DisplayName("test sottrazione")
 	public void subtractionTest() {
@@ -35,9 +37,10 @@ public class CalculatorTest {
 		assertEquals(result,0);
 		
 	}
+	
 	@Test
 	@DisplayName("test divisione")
-	public void divisionTest() {
+	public void divisionTest() throws Exception {
 		
 		//instanziamo la classe Calculator
 		c = new Calculator();
@@ -45,7 +48,9 @@ public class CalculatorTest {
 		float result = c.division(5, 5);
 		//verifo se il valore ottenuto e' uguale a quello aspettato
 		assertEquals(result,1);
+		
 	}
+	
 	@Test
 	@DisplayName("test moltiplicazione")
 	public void multiplicationTest() {
@@ -59,16 +64,17 @@ public class CalculatorTest {
 		
 	}
 	
-//	// Test verifica eccezzioni
-//	@Test
-//	@DisplayName("test divisione eccezzione")
-//	public void illegalDivisionTest() {
-//		
-//		//instanziamo la classe Calculator
-//		c = new Calculator();
-//		//verifico il metodo
-//		c.division(5, 5);
-//		
-//	}
+	// Test verifica eccezzioni
+	@Test
+	@DisplayName("test divisione eccezzione un numero = 0")
+	public void illegalDivisionTest() throws Exception{
+		
+		//instanziamo la classe Calculator
+		c = new Calculator();
+		
+		//verifico se l'eccezzione avviene
+		assertThrows(Exception.class, () -> c.division(5, 0));
+		
+	}
 
 }
